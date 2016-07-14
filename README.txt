@@ -1,4 +1,20 @@
 Programa desenvolvido em Python para Criação de Instrução Insert a partir de dados informados pelo Usuário
+
+Requisitos do Projeto
+1. Identificação do Proprietario
+2. Menu de Cadastros
+	- Conta, Tipo de Conta e Proprietario
+	- Categoria e Grupo Categoria
+	- Cenario
+3. Visualização Detalhada dos lançamentos de 3 contas (ultimos lançamentos)
+	- Incluir novos Lançamentos em qualquer conta cadastras
+		- Com parcelas
+		- Sem parcelas
+	- Apagar Lançamentos de quaisquer contas
+	- Editar Lançamentos de quaisquer contas
+4. Cosulta de Saldos de todas as contas cadastradas (em ordem descrescente)
+5. Consulta de gastos por Categoria ( todas as categoria em ordem descrescente)
+
 Sequencia de Execução
 1. CadastraLancamentos
 2. EntradaDeDados
