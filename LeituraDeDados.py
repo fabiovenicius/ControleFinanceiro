@@ -6,22 +6,25 @@ from datetime import date
 
 import ContaLinhas
 from ContaLinhas import *
+
 # Programa para verificar linhas que deverão ser importadas
 
-
-#Somente contagem de linhas do arquivo
+# Somente contagem de linhas do arquivo
 extrato = open('extrato.csv', 'r')
 totalLinhas = ContaLinhas.contaLinhas(extrato)
 extrato.close()
 
-#Abertura do arquivo para extração de dados
+# Abertura do arquivo para extração de dados
 extrato = open('extrato.csv', 'r')
 meuarquivo = open('LinhasExtrato.txt', 'w')
+marcador = open('marcador.csv', 'rb')
+
+ultimaLinhaProcessada = csv.reader(marcador)
 dados = csv.reader(extrato)
 qtdLinhas = 0
 for linhas in dados:
     qtdLinhas += 1
-#Iniciar após a linha de Saldo Anterior e percorrer até a penultima linha, antes da linha com Saldo final
+    # Iniciar após a linha de Saldo Anterior e percorrer até a penultima linha, antes da linha com Saldo final
     if 2 < qtdLinhas < totalLinhas:
         data = linhas[0]
         dependenciaOrigem = linhas[1]
