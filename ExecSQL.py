@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
+import GravaLancamentos
 import mysql.connector
 import ConectaDB
 import GravaLancamentos

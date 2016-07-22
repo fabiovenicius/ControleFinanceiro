@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import TrataDescricao
 from TrataDescricao import *
+import ExecSQL
 #Funcao para gravar informações em arquivo sql
 
 
@@ -10,5 +11,7 @@ parcelas, meuarquivo):
     while (parcelaAtual <= parcelas):
         descricao_completa = TrataDescricao.trataDescricao(data, conta,
 descricao, categoria, cenario, valor, parcelas, parcelaAtual)
+        #Gravação dos lançamentos no arquivo
         meuarquivo.write(descricao_completa)
+        ExecSQL.exec_comando(descricao_completa)
         parcelaAtual += 1
