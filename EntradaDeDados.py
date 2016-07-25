@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import GravaLancamentos
 from GravaLancamentos import *
+
 #Funcao para entrada de informações
 
 
