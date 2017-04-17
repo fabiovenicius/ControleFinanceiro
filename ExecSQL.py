@@ -33,5 +33,7 @@ def exec_select(sql, qtdcampos):
                 contador += 1
         db.close()
     except:
-        print('Erro ao processar comando: \n %s \n Quantidade de elementos \
-        informados: %s' % (sql, qtdcampos))
+        print('Erro ao processar comando: \n %s \n Quantidade de elementos informados: %s' % (sql, qtdcampos))
+        print (linha[contador])
+        contador += 1
+        db.close()
