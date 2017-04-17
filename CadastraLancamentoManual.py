@@ -4,6 +4,6 @@ from EntradaDeDados import *
 #Funcao para alimentar arquivo para sql
 
 
-meuarquivo = open('lancamentos.sql', 'w')
+meuarquivo = open('c:\\temp\\lancamentos.sql', 'w')
 EntradaDeDados.entradaDeDados(meuarquivo)
 meuarquivo.close()

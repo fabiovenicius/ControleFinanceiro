@@ -5,7 +5,7 @@ import pymysql
 
 def conn():
 # Criar um arquivo setup.txt com os parametros de conexao divididos por espaço
-    arquivo = open('setup.txt', 'r')
+    arquivo = open('C:\\Users\\M050183\\Documents\\GitHub\\ControleFinanceiro\\setup.txt', 'r')
     leitor = arquivo.read()
     parametros = leitor.split()
 

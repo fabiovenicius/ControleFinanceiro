@@ -1,4 +1,4 @@
-Programa desenvolvido em Python para Criação de Instrução Insert a partir de dados informados pelo Usuário
+﻿Programa desenvolvido em Python para Criação de Instrução Insert a partir de dados informados pelo Usuário
 
 Requisitos do Projeto
 1. Identificação do Proprietario
@@ -14,6 +14,30 @@ Requisitos do Projeto
 	- Editar Lançamentos de quaisquer contas
 4. Cosulta de Saldos de todas as contas cadastradas (em ordem descrescente)
 5. Consulta de gastos por Categoria ( todas as categoria em ordem descrescente)
+
+Cadastros:
+	- Conta
+	- Tipo Conta
+	- Proprietário
+	- Categoria
+	- GrupoCategoria
+	- Cenário
+	- MovtoFinanc
+	- SubMovtoFinanc
+	- Ativos
+	- TipoAtivos
+	- TipoLancamento
+	- PainelControle (Melhorias Futuras)
+	
+Informações Principais:
+	- Em Conta Corrente
+		-Saldo Final
+		-Movimentação
+		-Gastos por Categoria
+	- Em Investimentos
+		-Valor Investido
+		-Valor Atual
+		-Percentual de Perda ou Ganho
 
 Sequencia de Execução
 1. CadastraLancamentos
