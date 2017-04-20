@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Controle Financeiro Pessoal</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../pymeadmin/referenciamonetaria.png</normaloff>../pymeadmin/referenciamonetaria.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArquivo">
+    <property name="title">
+     <string>&amp;Arquivo</string>
+    </property>
+    <addaction name="menuUsuarios"/>
+   </widget>
+   <widget class="QMenu" name="menuCadastros">
+    <property name="title">
+     <string>Cadastros</string>
+    </property>
+    <widget class="QMenu" name="menuManutCategorias">
+     <property name="title">
+      <string>Manutenção de Categorias</string>
+     </property>
+     <addaction name="actionCategorias_2"/>
+     <addaction name="separator"/>
+     <addaction name="actionGrupo_Categoria"/>
+    </widget>
+    <widget class="QMenu" name="menuManutContas">
+     <property name="title">
+      <string>Manutenção de Contas</string>
+     </property>
+     <addaction name="actionContas_2"/>
+     <addaction name="separator"/>
+     <addaction name="actionTipo_Conta"/>
+    </widget>
+    <addaction name="menuManutContas"/>
+    <addaction name="menuManutCategorias"/>
+    <addaction name="actionCen_rios"/>
+   </widget>
+   <widget class="QMenu" name="menuConsultas">
+    <property name="title">
+     <string>Consultas</string>
+    </property>
+    <addaction name="actionMovimento_Financeiro"/>
+   </widget>
+   <widget class="QMenu" name="menuAjuda">
+    <property name="title">
+     <string>Ferramentas</string>
+    </property>
+    <addaction name="actionBackup"/>
+   </widget>
+   <widget class="QMenu" name="menuAjuda_2">
+    <property name="title">
+     <string>Ajuda</string>
+    </property>
+    <addaction name="actionTutorial"/>
+    <addaction name="separator"/>
+    <addaction name="actionSobre"/>
+   </widget>
+   <addaction name="menuArquivo"/>
+   <addaction name="menuCadastros"/>
+   <addaction name="menuConsultas"/>
+   <addaction name="menuAjuda"/>
+   <addaction name="menuAjuda_2"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionGrupo_Categoria">
+   <property name="text">
+    <string>Grupo Categoria</string>
+   </property>
+  </action>
+  <action name="actionCen_rios">
+   <property name="text">
+    <string>Cenários</string>
+   </property>
+  </action>
+  <action name="menuUsuarios">
+   <property name="text">
+    <string>Usuários</string>
+   </property>
+  </action>
+  <action name="actionTipo_Conta">
+   <property name="text">
+    <string>Tipo Conta</string>
+   </property>
+  </action>
+  <action name="actionMovimento_Financeiro">
+   <property name="text">
+    <string>Movimento Financeiro</string>
+   </property>
+  </action>
+  <action name="actionBackup">
+   <property name="text">
+    <string>Backup</string>
+   </property>
+  </action>
+  <action name="actionTutorial">
+   <property name="text">
+    <string>Tutorial</string>
+   </property>
+  </action>
+  <action name="actionSobre">
+   <property name="text">
+    <string>Sobre</string>
+   </property>
+  </action>
+  <action name="actionContas_2">
+   <property name="text">
+    <string>Contas</string>
+   </property>
+  </action>
+  <action name="actionCategorias_2">
+   <property name="text">
+    <string>Categorias</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
