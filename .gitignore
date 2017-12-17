@@ -1,4 +1,4 @@
 setup.txt
 extrato.csv
-*.sql
+sql/*.sql
 __pycache__/

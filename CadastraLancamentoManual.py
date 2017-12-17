@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import EntradaDeDados
-from EntradaDeDados import *
-#Funcao para alimentar arquivo para sql
+# from EntradaDeDados import *
+# Funcao para alimentar arquivo para sql
 
 
-meuarquivo = open(r'c:\temp\lancamentos.sql', 'w')
-EntradaDeDados.entradaDeDados(meuarquivo)
+meuarquivo = open('sql/lancamentos.sql', 'w')
+EntradaDeDados.entradadedados(meuarquivo)
 meuarquivo.close()

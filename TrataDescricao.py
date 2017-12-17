@@ -1,14 +1,17 @@
 # -*- coding: utf-8 -*-
+
+
 import TrataData
-from TrataData import *
-#Funcao para FORMATAR informações que serão gravadas no arquivo e acumular em
-#descricao_completa
+# from TrataData import *
+
+# Funcao para FORMATAR informações que serão gravadas no arquivo e acumular em
+# descricao_completa
 
 
 def trataDescricao(data, conta, descricao, categoria, cenario, valor,
 parcelas, parcelaAtual):
-    inicio = "insert into movtofinanc(datamovto,conta,descricao,categoria,\
-cenario, valor) values (\'"
+    inicio = "insert into movtofinanc(datamovto, conta, descricao, " \
+             "categoria, cenario, valor) values ('"
     caracter_virgula = "',"
     virgula = ","
     virgula_caracter = ",'"

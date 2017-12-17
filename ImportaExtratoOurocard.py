@@ -5,8 +5,8 @@ from GravaLancamentos import *
 #Funcao para alimentar arquivo para sql
 
 
-meuextrato=open(r'C:\Users\M050183\Downloads\OUROCARD_PLATINUM_VISA-Próxima_Fatura.txt','r')
-meuarquivo = open(r'c:\temp\lancamentos.sql', 'w')
+meuextrato=open('OUROCARD.txt','r')
+meuarquivo = open('lancamentos.sql', 'w')
 #leitor=csv.reader(meuextrato,delimiter=',',quotechar='"')
 data_lancamento=input('Informe a Data para lançamento:')
 
