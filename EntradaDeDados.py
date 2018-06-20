@@ -7,7 +7,7 @@ import ExecSQL
 
 def entradadedados(meuarquivo):
     opcao = 'S'
-    sql_categoria = 'select id,categoria from categoria'	
+    sql_categoria = 'select id,categoria from categoria'
     while opcao == 'S' or opcao == 's':
         data = input('Informe a data da transação:')
         conta = input('Informe a conta:')

@@ -13,7 +13,7 @@ def exec_comando(sql):
     try:
         cur.execute(sql)
         db.commit()
-    except:
+    except(pymysql.err.OperationalError):
         print('Erro: Não foi possível Executar comando sql %s' % (sql))
         db.rollback()
     db.close

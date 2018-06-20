@@ -24,7 +24,8 @@ dados = csv.reader(extrato)
 qtdLinhas = 0
 for linhas in dados:
     qtdLinhas += 1
-    # Iniciar após a linha de Saldo Anterior e percorrer até a penultima linha, antes da linha com Saldo final
+    # Iniciar após a linha de Saldo Anterior e percorrer até a penultima linha,
+    # antes da linha com Saldo final
     if 2 < qtdLinhas < totalLinhas:
         data = linhas[0]
         dependenciaOrigem = linhas[1]
