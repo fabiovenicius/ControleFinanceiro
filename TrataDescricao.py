@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-import TrataData
+from TrataData import trataData
 # from TrataData import *
 
 # Funcao para FORMATAR informações que serão gravadas no arquivo e acumular em
@@ -10,7 +10,7 @@ import TrataData
 
 def trataDescricao(data, conta, descricao, categoria, cenario, valor,
                    parcelas, parcelaAtual):
-    inicio = "insert into movtofinanc(datamovto, conta, descricao, " \
+    inicio = "insert into movtoconta(datamovto, conta, descricao, " \
              "categoria, cenario, valor) values ('"
     caracter_virgula = "',"
     virgula = ","
@@ -27,7 +27,7 @@ def trataDescricao(data, conta, descricao, categoria, cenario, valor,
     elif parcelas < 10:
         parcelamentoMenorQueDez = 1
         while(parcelamentoMenorQueDez <= parcelas):
-            novaData = str(TrataData.trataData(data, parcelaAtual))
+            novaData = str(trataData(data, parcelaAtual))
             novaDescricao = descricao + ' PARC 0' + str(parcelaAtual) + '/0' \
                                       + str(parcelas)
             descricao_completa = inicio + novaData + caracter_virgula +\
@@ -48,7 +48,7 @@ def trataDescricao(data, conta, descricao, categoria, cenario, valor,
             if (parcelaAtual < 10):
                 novaDescricao = descricao + ' PARC 0' + str(parcelaAtual) +\
                     '/' + str(parcelas)
-                novaData = str(TrataData.trataData(data, parcelaAtual))
+                novaData = str(trataData(data, parcelaAtual))
                 descricaoCompleta = inicio + novaData + caracter_virgula +\
                     conta + virgula_caracter + novaDescricao +\
                     caracter_virgula + categoria +\
@@ -60,7 +60,7 @@ def trataDescricao(data, conta, descricao, categoria, cenario, valor,
             elif(parcelaAtual >= 10):
                 novaDescricao = descricao + ' PARC ' + str(parcelaAtual) +\
                     '/' + str(parcelas)
-                novaData = str(TrataData.trataData(data, parcelaAtual))
+                novaData = str(trataData(data, parcelaAtual))
                 descricaoCompleta = inicio + novaData + caracter_virgula +\
                     conta + virgula_caracter +\
                     novaDescricao + caracter_virgula + categoria +\
