@@ -134,9 +134,9 @@ def consultarsaldodb(data):
     :return:
     """
     if data == "12/30/2016":
-        sql = "select valor saldo from movtofinanc where conta = 2 and id =1"
+        sql = "select valor saldo from movtoconta where conta = 2 and id =1"
     else:
-        sql = "select sum(valor) saldo from movtofinanc where conta = 2 and\
+        sql = "select sum(valor) saldo from movtoconta where conta = 2 and\
          datamovto <= '{}'".format(
             converterdata(data))
     descricao = "Saldo na Data"
@@ -154,7 +154,7 @@ def consultarsaldodb(data):
 #
 #
     #     sql = "select datamovto, descricao, valor " \
-    #           "from movtofinanc where conta = 2 and " \
+    #           "from movtoconta where conta = 2 and " \
     #           "datamovto = '{}'".format(data_extrato)
 #
     #     print(sql)
@@ -187,7 +187,7 @@ def consultardetalhesextrato(mes, dia_extrato):
 def consultardetalhebd(mes, dia_db, ano):
     meses = {"jan": 1, "fev": 2, "mar": 3, "abr": 4, "mai": 5, "jun": 6,
              "jul": 7, "ago": 8, "set": 9, "out": 10, "nov": 11, "dez": 12}
-    sql = "select datamovto, descricao, valor from movtofinanc where conta = 2\
+    sql = "select datamovto, descricao, valor from movtoconta where conta = 2\
            and datamovto = '{}'"\
         .format(date(2017,  meses[mes], dia_db))
 
