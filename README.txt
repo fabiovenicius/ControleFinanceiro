@@ -22,8 +22,8 @@ Cadastros:
 	- Categoria
 	- GrupoCategoria
 	- Cenário
-	- MovtoFinanc
-	- SubMovtoFinanc
+	- movtoconta
+	- Submovtoconta
 	- Ativos
 	- TipoAtivos
 	- TipoLancamento
