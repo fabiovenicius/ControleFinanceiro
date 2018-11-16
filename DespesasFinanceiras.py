@@ -2,7 +2,7 @@ import ExecSQL
 
 
 def CadastraDespesasFinanceira(despesa):
-    sql = "insert into acoes(despesa) values" \
+    sql = "insert into despesasfinanceiras(despesa) values" \
           "({});".format(despesa)
     ExecSQL.exec_comando(sql)
 

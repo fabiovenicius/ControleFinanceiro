@@ -1,44 +1,45 @@
 import ExecSQL
 
 
-def CadastraAcao(papel, descricao):
-    sql = "insert into acoes(papel,descricao) values" \
-          "({},{});".format(papel,descricao)
+def CadastrarAcao(papel, descricao, nomepregao,atividade):
+    sql = "insert into acoes(papel, descricao, nomepregao,atividade) values" \
+          "({},{},{},{});".format(papel, descricao, nomepregao,atividade)
     ExecSQL.exec_comando(sql)
 
-def CadastraMovtoAcao(dataMovto,conta,papel,valor_unitario,tipo_movto,
-                      quantidade,notaCorretagem):
-    ''' Cadastramento do Movto da Ação - Memoria de Cálculo'''
-    cadastramovto = "insert into movtoacoes(datamovto,conta,papel," \
-          "valor_unitario,tipo_movo,quantidade,notacorretagem) values" \
-          "('{}',{},{},{},{},{},'{}');".format(dataMovto, conta, papel, valor_unitario,
-                                    tipo_movto, quantidade, notaCorretagem)
-    ExecSQL.exec_comando(cadastramovto)
-    '''Atualização dos Saldos das ações em carteira'''
-    if tipo_movto == 1:
-        valor_total = quantidade * valor_unitario
-    else:
+def CadastrarMovtoAcao(notaCorretagem,papel,tipo_movto,valor_unitario,
+                      quantidade):
+    if tipo_movto == 2:
         quantidade = quantidade * -1
-        valor_total = quantidade * valor_unitario
-    AtualizarSaldoAcoes(conta,papel,quantidade,valor_total)
+    ''' Cadastramento do Movto da Ação - Memoria de Cálculo'''
+    sql = "insert into movtoacoes(notacorretagem,papel,tipo_movto," \
+          "valor_unitario,quantidade) values" \
+          "({},{},{},{},{});".format(notaCorretagem, 
+                                     papel,
+                                     tipo_movto,
+                                     valor_unitario,
+                                     quantidade)
+    ExecSQL.exec_comando(sql)
 
 def AtualizarSaldoAcoes(conta, papel, quantidade, valor_total):
     sql = "insert into saldoacoes(conta,papel,quantidade," \
-          "valor_total) values ({},{},{},{});".format(conta,
-                                                      papel, 
+          "valor_total) values ({},{},{},{});".format(papel,                                                     papel, 
                                                       quantidade,
                                                       valor_total)
     ExecSQL.exec_comando(sql)
 
-def ConsultaAcoes():
-    sql = "select id, papel, descricao from acoes;"
+def ConsultarAcoes(nomepregao):
+    sql = "select id, papel, descricao, nomepregao, atividade from acoes " \
+          "where nomepregao like '{}';".format(nomepregao.capitalize())
     acoes = ExecSQL.exec_select(sql)
-    print(" Id  Ação  Descrição")
     for acao in acoes:
-        print("{:>3} {:>6} {}".format(acao['id'],acao['papel'],acao['descricao']))
+        print("{:>3} {:>6} {} {} {}".format(acao['id'],
+                                            acao['papel'],
+                                            acao['descricao'],
+                                            acao['nomepregao'],
+                                            acao['atividade']))
 
 
-def ConsultaSaldoAcoes():
+def ConsultarSaldoAcoes():
     sql = "select c.conta, b.papel, sum(a.quantidade) quantidade," \
           "sum(a.valor_total) total from saldoacoes a, acoes b, " \
           "conta c where a.papel = b.id and a.conta = c.id " \

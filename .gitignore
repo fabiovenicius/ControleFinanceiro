@@ -2,5 +2,8 @@ setup.txt
 extrato.csv
 sql/*.sql
 sql/*.csv
+*.ipynb
+*.xlsx
 sql/*.txt
+NC/*
 __pycache__/
